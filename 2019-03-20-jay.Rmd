@@ -5,6 +5,7 @@ date: "3/20/2019"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -67,7 +68,8 @@ levels(studentMajors)
  levels(studentMajors0)
  #levels() shows you the levels of a factor
 ```
-#practice 6:
+
+#practice 6: the difference between strings and numbers
 ```{r}
 stringInteger <- c("1","2","-11")
 class(stringInteger) #the quotes cause the supposedly numeric to be recognized as strings thus can't be calculated
@@ -77,6 +79,35 @@ class(stringInteger) #the quotes cause the supposedly numeric to be recognized a
 trueInteger <- as.integer(stringInteger)
 class(trueInteger) #as.interger converted the numbers in stringinteger and made the calcuable
 
+```
+
+#practice 7:time
+```{r}
+library(lubridate) #this allows lubridate to work
+```
+
+```{r}
+dtObject<-ymd_hms("1970-01-01 00:02:53") #this command allows you to create a date time object(the command stands for year,month,date,hour,minutes, second)
+```
+
+```{r}
+class(dtObject) # output POSIXct means R recognized this as time
+```
+
+```{r}
+dtObject #UTC is the time zone
+```
+
+```{r}
+typeof(dtObject) #double mean a number which is not a integer 
+```
+
+```{r}
+as.double(dtObject) # because lubridate allows time to be calculated and R recognized time as double, this command outputs the total second of the given time
+```
+
+```{r}
+Sys.timezone() #this show the time zone of your system
 ```
 
 ```{r}
