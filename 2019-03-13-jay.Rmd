@@ -1,0 +1,71 @@
+---
+title: "2019-03-13"
+author: "Jay Wu"
+date: "2019年3月23日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#practice 1:Create an object with values
+
+```{r}
+a <- 2
+3 -> b
+
+65 + b
+
+c <- 47
+65 + c
+```
+
+#practice 2: if you want to know the value of an object, type it out within a -> ``
+```{r}
+`c`
+```
+
+#practice 3: if you want to name an object a complex name, use-> ``
+```{r}
+`107上學期我的平均成績` <- 100
+```
+
+#practice 4: class of an object 
+```{r}
+class(a)
+
+a<-5 #this will override the previous value assigned to `a` 
+a2<-5L #L means the value is an integer(the defalt class is float)
+
+
+class(a)
+class(a2)
+
+
+aVector<-c(5,6,7) #c() means a vector
+a2Vector<-c(5L,6L,7L)
+
+class(aVector)#this detects the type of the value inside of the vector
+class(a2Vector)
+```
