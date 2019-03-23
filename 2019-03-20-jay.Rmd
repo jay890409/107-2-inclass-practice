@@ -1,0 +1,53 @@
+---
+title: '2019-03-20'
+author: ""
+date: "3/20/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#practice 1:vetor don't need to be numeral
+```{r}
+bVector<-c("你好","How are you?")
+```
+
+
+#practice 2:the use of single and double quotations
+```{r}
+dialogue <- c('小明說："明天不用上課。"',
+               '小花說："真的嗎？"')
+
+cat(dialogue, sep="\n")
+
+
+
+dialogue <- c("小明說：'明天不用上課。'",
+               "小花說：'真的嗎？'")
+
+cat(dialogue, sep="\n")
+```
+
+
+#practice 3:logical
+```{r}
+aLogical <- c(T,TRUE,F,FALSE,FALSE)
+class(aLogical)
+
+sum(aLogical) #when calculating logicals, they are treated as 1(true) and 0(false)
+```
+
+```{r}
+studentMajors0 <- c("經濟系", "經濟系", "法律系")
+studentMajors <- factor(c("經濟系", "經濟系", "法律系")) #factor allows R to tell the difference between 經濟&法律
+
+class(studentMajors0)
+class(studentMajors) 
+
+`studentMajors0` 
+`studentMajors`  #you can tell by the output levels that R recognized the difference
+
+```
+
