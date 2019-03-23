@@ -38,7 +38,7 @@ class(aLogical)
 
 sum(aLogical) #when calculating logicals, they are treated as 1(true) and 0(false)
 ```
-
+#practice 4:the meaning of factor
 ```{r}
 studentMajors0 <- c("經濟系", "經濟系", "法律系")
 studentMajors <- factor(c("經濟系", "經濟系", "法律系")) #factor allows R to tell the difference between 經濟&法律
@@ -48,6 +48,39 @@ class(studentMajors)
 
 `studentMajors0` 
 `studentMajors`  #you can tell by the output levels that R recognized the difference
+
+```
+
+#practice 5:how does R saves a factor
+```{r}
+birthplace <- factor(c('台中','台中','台北','台北','台北'))
+birthplace
+as.integer(birthplace) #as.integer will convert a foctor to a interger(R saves a factor as a integer ), if you want to convert to numeric, use as.numeric
+```
+
+```{r}
+typeof(studentMajors) 
+typeof(studentMajors0)
+#typeof() can check what type of data does R saved this object as
+ 
+levels(studentMajors)
+ levels(studentMajors0)
+ #levels() shows you the levels of a factor
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
 
 ```
 
