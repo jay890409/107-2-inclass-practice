@@ -67,12 +67,15 @@ levels(studentMajors)
  levels(studentMajors0)
  #levels() shows you the levels of a factor
 ```
-
+#practice 6:
 ```{r}
-
+stringInteger <- c("1","2","-11")
+class(stringInteger) #the quotes cause the supposedly numeric to be recognized as strings thus can't be calculated
 ```
 
 ```{r}
+trueInteger <- as.integer(stringInteger)
+class(trueInteger) #as.interger converted the numbers in stringinteger and made the calcuable
 
 ```
 
