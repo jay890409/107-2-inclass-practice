@@ -37,6 +37,7 @@ library(lubridate)
 ```
 
 
+
 ```{r}
 twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
 ```
@@ -48,17 +49,26 @@ LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
 
 ```
 
+#date time as second
+```{r}
+typeof(twDateTime) #computer view date time as a double
+as.double(twDateTime)
+as.double(LisbonDateTime)
+```
 
+
+
+#different ways to create a date time object wite lubricate
+```{r}
+testDate1<-ymd("2018-09-11")
+testDate2<-mdy("March 3, 2019")
+
+```
 
 
 ```{r}
 
 ```
-
-
-
-
-
 
 
 
