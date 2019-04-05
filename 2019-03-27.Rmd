@@ -121,11 +121,30 @@ x = y
 x == y
 ```
  
+#a %in% b means check if a is within (belongs) b 
 ```{r}
 x4 <- c(1,5,8)
 y4 <- c(5,8)
 
 x4 %in% y4
+```
+
+
+
+# use NA(not avalible) to represent a data is missing
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20)
+
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+
+is.na(x2) # to check if a data is missing, use if.na
+```
+# if you sum up a vector, it will sum all the numbers in it, but if it contains missind datas, use na.rm=T to sum up regardless of missing datas
+```{r}
+sum(x2)
+sum(x2,na.rm=T)
 ```
 
 
