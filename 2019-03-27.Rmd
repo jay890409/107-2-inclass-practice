@@ -65,10 +65,21 @@ testDate2<-mdy("March 3, 2019")
 
 ```
 
-
+#how to create a vector
 ```{r}
-
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+aL <- c(1L, 5L, -3L) 
+bL <- c(-2L, -4L, 8L)
 ```
+
+
+
+
+
+
+
+
 
 
 
