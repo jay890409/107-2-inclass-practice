@@ -1,0 +1,110 @@
+---
+title: '2019-04-10'
+author: "Jay Wu"
+date: "2019年4月18日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+library(stringr)
+
+```
+
+
+
+
+
+
+
+
+
+
+#str_subset:挑出一部分(selection with special conditions=>character vectors, patterns to look for)
+
+#str_detect:detecting patterns
+```{r}
+course <- c("個體經濟學","投資學","總體經濟學")
+str_subset(course,"經濟學")
+str_detect(course,"經濟學")
+```
+#str_sub:extract and replace substrings from a character vector, the numbers means the start and end character of each element i a string vector you want to extract
+```{r}
+studentID<-c('410177115','410176080','410174233','410177011','410182045','410176014')
+
+系別 <- str_sub(studentID,5,6)
+入學年 <- str_sub(studentID,2,4)
+系別
+入學年
+```
+
+#join:str_c(): 多個字串向量的合併
+```{r}
+month <- c("3","4","2")
+day <- c("11","5","7")
+
+char1 <- c("月","月","月")
+char2 <- c("日","日","日")
+month
+char1
+day 
+char2
+str_c(month,char1,day,char2)
+```
+#the character vecyors can be different length, it will simply repeat the shorter vector
+```{r}
+str_c(month,c("月"),day,c("日"))#you can create a vecor that is not pre-estabalished in str_c
+
+str_c(month,"月",day,"日")#you can be even more simpler by discarding C()
+```
+#you can use sep='' to seperate joined vectors apart
+```{r}
+month
+day
+str_c(month,day, sep="-")
+```
+
+#str_split(): 分割一個字串向量, ''裡的東西作為切割準則
+```{r}
+dates <- c("3-11", "4-5",  "2-7")
+str_split(dates,"-")
+```
+
+#replace
+```{r}
+dates
+str_replace(dates,"-","月")
+```
+
+
+
+
+
+
+
+
+
+
