@@ -1,0 +1,90 @@
+---
+title: '2019-04-03'
+author: "Jay Wu"
+date: "2019年4月5日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+#NaN means not a number
+```{r}
+0/0
+```
+```{r}
+install.packages("readr")
+
+```
+```{r}
+install.packages("curl")
+```
+
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+currency <- exData2$幣別
+```
+
+
+```{r}
+head(currency) #head()tells you tje first six data of an object
+```
+
+
+#資料有幾種:把它先轉成factor class，再用levels檢查
+```{r}
+class(currency)
+```
+
+```{r}
+currency<-as.factor(currency) #前面是舊資料，後面是新資料
+```
+
+```{r}
+class(currency)
+```
+
+```{r}
+levels(currency)
+```
+#length() calculates the number of elements in a vector
+```{r}
+length(levels(currency)) #levels() is a vector data, this means there are five kinds of currency saved in the data
+```
+#how many of the datas are japanese yen?
+```{r}
+currency=='日圓JPY/USD' #this shows every single one of the data
+
+sum(currency=='日圓JPY/USD') #sum() shows the sum of all the datas that matches the requirements
+```
+
+
+
+
+
+
+
+
