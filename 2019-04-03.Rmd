@@ -139,7 +139,7 @@ date<-ymd(date)
 class(date)
 ```
 
-#1980-08-01之後的資料有多少筆
+#2.1980-08-01之後的資料有多少筆
 ```{r}
 answer1<- date>=ymd('1980-08-01')
 
@@ -150,7 +150,7 @@ as.integer(ymd('1980-08-01'))
 sum(answer1) #this is how many datas are after 1980-08-01
 ```
 
-#幣別為“歐元USD/EUR”的資料有多少筆
+#3.幣別為“歐元USD/EUR”的資料有多少筆
 ```{r}
 head(currency)
 answer2<-currency=='歐元USD/EUR'
@@ -158,7 +158,7 @@ sum(answer2)
 ```
 
 
-#exchangeRate有多少筆NA。
+#4.exchangeRate有多少筆NA。
 
 ```{r}
 answer3<- is.na(exchangeRate)
@@ -166,10 +166,73 @@ sum(answer3)
 ```
 
 
-#排除NA後，幣別為“歐元USD/EUR”的資料有多少筆
+#5.排除NA後，幣別為“歐元USD/EUR”的資料有多少筆
 ```{r}
+isnotna<-!is.na(exchangeRate)
+iseuro<-currency=='歐元USD/EUR'
+answer4<-isnotna&iseuro
+sum(answer4)
+
+
+
+
+
+#alternative route
+answer4_2<-!is.na(exchangeRate)&currency=='歐元USD/EUR'
+sum(answer4_2)
+```
+
+
+
+#practice 2
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+courseType <- transcriptDataFinal$`必選修類別（必∕選∕通）`
+major <- transcriptDataFinal$學系
+studentID <- transcriptDataFinal$學號
+grade <- transcriptDataFinal$學期成績
 
 ```
+
+#1.有多少筆資料是來自經濟學系
+```{r}
+class(major)
+head(major)
+answer5<-sum(major=='經濟學系')
+answer5
+```
+#2.請問學號“5bdS6977b”同學修了多少課
+```{r}
+head(studentID)
+answer6<-sum(studentID==('5bdS6977b'))
+answer6
+```
+#3.請問學號“5bdS6977b”有多少科成績及格
+```{r}
+answer7<-studentID==('5bdS6977b')&grade>=60
+sum(answer7)
+```
+
+
+#4.有多少筆資料來自經濟學系學生且為選修課
+```{r}
+head(courseType)
+answer8<-major==('經濟學系')&courseType==('選')
+sum(answer8)
+```
+
+#5.在經濟學系學生且必修課程中，成經不及格佔多少比例
+```{r}
+ecopass<-sum(major==('經濟學系')&courseType==('必')&grade<60)
+ecomust<-sum(major==('經濟學系')&courseType==('必'))
+ecopass/ecomust
+```
+
+
+
+
+
 
 
 
