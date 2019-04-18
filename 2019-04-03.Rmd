@@ -82,6 +82,52 @@ sum(currency=='日圓JPY/USD') #sum() shows the sum of all the datas that matche
 ```
 
 
+```{r}
+x5 <- c("台北市","新北市","高雄市")
+greatTaipei <- c("台北市","新北市")
+
+x5 %in% greatTaipei
+
+!(x5 %in% greatTaipei)#using negation:!() means that you are looking for(presented by 'true') the datas not in the area of the given one
+```
+
+
+```{r}
+y5 <- c("女","男","女")
+
+y5
+y5=="女"
+!(y5=="女")
+```
+#& means the data needs to fit both requirements to be true, note that what it cares about is where the elements are in the data (eg. first, second, third) so the same spot in a different bunch means the same element
+```{r}
+(x5 %in% greatTaipei) & (y5=="女")
+```
+
+# | means or, as long as the data fits one of the requirement, it is true
+```{r}
+(x5 %in% greatTaipei) | (y5=="女")
+```
+
+#which() tells you which of the elements fits the requirements
+```{r}
+which((x5 %in% greatTaipei) & (y5=="女"))
+which((x5 %in% greatTaipei) | (y5=="女"))
+```
+
+# xor means either or, which means the ones that fits both or neither are false
+```{r}
+xor(x5 %in% greatTaipei, y5=="女")
+```
+
+
+```{r}
+
+```
+
+
+
+
 
 
 
