@@ -120,10 +120,70 @@ which((x5 %in% greatTaipei) | (y5=="女"))
 xor(x5 %in% greatTaipei, y5=="女")
 ```
 
+#practice
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+date <- as.character(exData2$期間)
+currency <- exData2$幣別
+exchangeRate <- exData2$匯率
+```
 
+
+# 1.請把date的class存成date class
+```{r}
+class(date)
+head(date)
+library(lubridate)
+date<-ymd(date)
+class(date)
+```
+
+#1980-08-01之後的資料有多少筆
+```{r}
+answer1<- date>=ymd('1980-08-01')
+
+head(as.integer(date)) # you can use as.inter=ger to check how computer sees time
+
+as.integer(ymd('1980-08-01'))
+
+sum(answer1) #this is how many datas are after 1980-08-01
+```
+
+#幣別為“歐元USD/EUR”的資料有多少筆
+```{r}
+head(currency)
+answer2<-currency=='歐元USD/EUR'
+sum(answer2)
+```
+
+
+#exchangeRate有多少筆NA。
+
+```{r}
+answer3<- is.na(exchangeRate)
+sum(answer3)
+```
+
+
+#排除NA後，幣別為“歐元USD/EUR”的資料有多少筆
 ```{r}
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
