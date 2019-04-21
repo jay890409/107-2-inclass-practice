@@ -137,6 +137,35 @@ extract2[[1]]
 
 
 
+#[]的應用:true代表取,false不取
+```{r}
+length(plasticContainer)
+plasticContainer[c(T,F,T)]
+
+
+成績單
+成績單[c(FALSE,TRUE,TRUE)]
+```
+
+
+
+#$也可以取東西，但只能用在listvector，且只能取「一個」元素，其中，一定為「元素名稱」。
+```{r}
+#setup
+
+your_github_username <- "jay890409"
+your_practice_reponame <- "107-2-inclass-practice"
+library(httr)
+library(stringr)
+str_replace_all(
+  "https://api.github.com/repos/:owner/:repo/commits",
+  c(
+    ":owner"=your_github_username,
+    ":repo"=your_practice_reponame
+    )
+  ) -> commitCheckStatement
+commitCheck <- content(GET(commitCheckStatement))
+```
 
 
 
@@ -145,8 +174,18 @@ extract2[[1]]
 
 
 
+```{r}
+commitdate<-commitCheck[[1]][["commit"]][["committer"]][["date"]]
+```
 
 
+```{r}
+library(lubridate)
+ymd_hms(commitdate)->commitdate
+
+with_tz(commitdate, tzone='Asia/Taipei')
+
+```
 
 
 
